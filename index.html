@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <title>Intro to Vue.js</title>
+  <link rel="stylesheet"
+        href="main.css">
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="/favicon/apple-touch-icon.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon/favicon-32x32.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon/favicon-16x16.png">
+  <link rel="manifest"
+        href="/favicon/site.webmanifest">
+</head>
+
+<body>
+  <div class="nav-bar"></div>
+
+  <div id="app">
+    <cart :cart="cart"
+          :variants="variants"
+          :selected-variant="selectedVariant"
+          @add-to-cart="updateCart"
+          @remove-from-cart="removeFromCart"></cart>
+    <product :variants="variants"
+             :selected-variant="selectedVariant"
+             :premium="premium"
+             @variant-selected="onSelectedVariant"></product>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
